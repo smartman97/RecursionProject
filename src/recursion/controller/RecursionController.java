@@ -34,7 +34,7 @@ public class RecursionController
 	
 	public String doFactorial(String inputValue)
 	{
-		calculatedValue = "The Factorial sequence number of " + inputValue + " is " + Integer.toString(mathTool.getFactorialNumber(Integer.parseInt(inputValue)));
+		calculatedValue = "The Factorial sequence number of " + inputValue + " is " + Double.toString(mathTool.getFactorialNumber(Double.parseDouble(inputValue)));
 		
 		return calculatedValue;
 	}

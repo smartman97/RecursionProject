@@ -97,7 +97,7 @@ public class RecursionPanel extends JPanel
 		
 		try
 		{
-			Integer.parseInt(input);
+			Double.parseDouble(input);
 			isNumber = true;
 		}
 		catch(Exception numberException)

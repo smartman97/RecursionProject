@@ -22,7 +22,7 @@ public class RecursionTool
 		}
 	}
 
-	public int getFactorialNumber(int position)
+	public double getFactorialNumber(double position)
 	{
 		// Defensive code against user evilness
 		if (position < 0)
