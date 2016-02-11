@@ -20,6 +20,7 @@ public class RecursionFrame extends JFrame
 	{
 		this.setContentPane(basePanel);
 		this.setSize(450, 300);
+		this.setTitle("Using Recursive");
 		this.setVisible(true);
 	}
 }

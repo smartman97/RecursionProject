@@ -1,8 +1,14 @@
 package recursion.view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 
 import recursion.controller.RecursionController;
 
@@ -60,6 +66,45 @@ public class RecursionPanel extends JPanel
 	
 	public void setupListeners()
 	{
+		fibButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userInput = inputField.getText();
+				if(checkInput(userInput))
+				{
+					resultsArea.setText(baseController.doFibonacci(userInput));
+				}
+			}
+		});
 		
+		facButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userInput = inputField.getText();
+				if(checkInput(userInput))
+				{
+					resultsArea.setText(baseController.doFactorial(userInput));
+				}
+			}
+		});
+	}
+	
+	private boolean checkInput(String input)
+	{
+		boolean isNumber = false;
+		
+		try
+		{
+			Integer.parseInt(input);
+			isNumber = true;
+		}
+		catch(Exception numberException)
+		{
+			resultsArea.setText("That is not a valid numver");
+		}
+		
+		return isNumber;
 	}
 }
