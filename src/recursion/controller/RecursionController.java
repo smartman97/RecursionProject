@@ -1,5 +1,6 @@
 package recursion.controller;
 
+import recursion.model.CodeTimer;
 import recursion.model.RecursionTool;
 import recursion.view.RecursionFrame;
 
@@ -8,6 +9,7 @@ public class RecursionController
 	private RecursionTool mathTool;
 	private RecursionFrame baseFrame;
 	private String calculatedValue;
+	private CodeTimer timer;
 	
 	public RecursionController()
 	{
@@ -17,7 +19,9 @@ public class RecursionController
 	
 	public void start()
 	{
+		timer.startTimer();
 		calculatedValue = Double.toString(mathTool.getFibNumber(0));
+		timer.stopTimer();
 	}
 	
 	public String getCalculatedValue()
@@ -37,5 +41,10 @@ public class RecursionController
 		calculatedValue = "The Factorial sequence number of " + inputValue + " is " + Double.toString(mathTool.getFactorialNumber(Double.parseDouble(inputValue)));
 		
 		return calculatedValue;
+	}
+	
+	public String timingInfo()
+	{
+		return timer.toString();
 	}
 }

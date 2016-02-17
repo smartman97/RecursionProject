@@ -74,6 +74,7 @@ public class RecursionPanel extends JPanel
 				if(checkInput(userInput))
 				{
 					resultsArea.setText(baseController.doFibonacci(userInput));
+					resultsArea.append(baseController.timingInfo());
 				}
 			}
 		});
@@ -85,7 +86,9 @@ public class RecursionPanel extends JPanel
 				String userInput = inputField.getText();
 				if(checkInput(userInput))
 				{
+					
 					resultsArea.setText(baseController.doFactorial(userInput));
+					resultsArea.append(baseController.timingInfo());
 				}
 			}
 		});
@@ -102,7 +105,7 @@ public class RecursionPanel extends JPanel
 		}
 		catch(Exception numberException)
 		{
-			resultsArea.setText("That is not a valid numver");
+			resultsArea.setText("That is not a valid number");
 		}
 		
 		return isNumber;
