@@ -19,9 +19,7 @@ public class RecursionController
 	
 	public void start()
 	{
-		timer.startTimer();
 		calculatedValue = Double.toString(mathTool.getFibNumber(0));
-		timer.stopTimer();
 	}
 	
 	public String getCalculatedValue()
@@ -41,6 +39,16 @@ public class RecursionController
 		calculatedValue = "The Factorial sequence number of " + inputValue + " is " + Double.toString(mathTool.getFactorialNumber(Double.parseDouble(inputValue)));
 		
 		return calculatedValue;
+	}
+	
+	public void startTime()
+	{
+		timer.startTimer();
+	}
+	
+	public void stopTime()
+	{
+		timer.stopTimer();
 	}
 	
 	public String timingInfo()

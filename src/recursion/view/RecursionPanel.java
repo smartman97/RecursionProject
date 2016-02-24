@@ -73,7 +73,9 @@ public class RecursionPanel extends JPanel
 				String userInput = inputField.getText();
 				if(checkInput(userInput))
 				{
+					baseController.startTime();
 					resultsArea.setText(baseController.doFibonacci(userInput));
+					baseController.stopTime();
 					resultsArea.append(baseController.timingInfo());
 				}
 			}
@@ -86,8 +88,9 @@ public class RecursionPanel extends JPanel
 				String userInput = inputField.getText();
 				if(checkInput(userInput))
 				{
-					
+					baseController.startTime();
 					resultsArea.setText(baseController.doFactorial(userInput));
+					baseController.stopTime();
 					resultsArea.append(baseController.timingInfo());
 				}
 			}
